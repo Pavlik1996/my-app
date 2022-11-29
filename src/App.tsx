@@ -9,6 +9,7 @@ const App = () => {
             <p>Lorem</p>
             <p>123</p>
             <p>2</p>
+            <p>3</p>
             <Header/>
             <Technologies/>
         </div>
