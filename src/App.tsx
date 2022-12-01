@@ -1,24 +1,29 @@
 import React from 'react';
 import './App.css';
-import Header from "./Header";
-import Technologies from "./Technologies";
+import Accordions from "./components/Accordion/Accordions";
+import {Rating} from "./components/Rating/Rating";
+
 
 const App = () => {
+    console.log("app rendering")
     return (
         <div>
-            <p>Lorem</p>
-            <p>123</p>
-            <p>2</p>
-            <p>3</p>
-            <Header/>
-            <Technologies/>
+            <PageTitle title={"This is APP component"}/>
+            <Rating value={1}/>
+            <Accordions/>
+            <Rating value={4}/>
+            <Rating value={3}/>
+            <Rating value={2}/>
+            <Rating value={0}/>
+            <PageTitle title={"User"}/>
         </div>
 
     );
 }
 
-
-
+function PageTitle(props: any) {
+    return <h1>{props.title}</h1>
+}
 
 
 export default App;
