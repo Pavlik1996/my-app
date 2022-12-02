@@ -1,6 +1,10 @@
 import React from "react";
 
-export const Rating = (props: any) => {
+type RatingPropsType = {
+    value: number
+}
+
+export const Rating = (props: RatingPropsType) => {
 
     if (props.value === 1) {
         return (
@@ -55,12 +59,15 @@ export const Rating = (props: any) => {
 
 }
 
-function Star(props: any) {
-    console.log("Star rendering")
-    if (props.d === true) {
+type StartPropsType = {
+    d : boolean
+}
+
+function Star(props: StartPropsType) {
+    if (props.d) {
         return <span><b>star </b></span>
     } else {
-        return <span>star</span>
+        return <span>star </span>
     }
 
 

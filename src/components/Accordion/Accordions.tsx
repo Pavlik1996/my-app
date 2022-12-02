@@ -1,24 +1,57 @@
 import React from "react";
 
-const Accordions = () => {
+type AccordionsPropsType = {
+    titleValue: string
+    collapsed: boolean
+}
+
+const Accordions = (props: AccordionsPropsType) => {
+    if (props.collapsed) {
+        return (
+            <>
+                <AccordionsTitle title={props.titleValue}/>
+                <AccordionsBody titleMenu={props.titleValue}/>
+            </>
+        )
+    }
     return (
         <>
-            <AccordionsTitle/>
-            <AccordionsBody/>
+            <AccordionsTitle title={props.titleValue}/>
         </>
     )
+
 }
-const AccordionsTitle = () => {
+
+type AccordionsTitlePropsType = {
+    title: string
+}
+
+const AccordionsTitle = (props: AccordionsTitlePropsType) => {
     console.log("AccordionTitle rendering")
     return (
         <>
-            <h3>Menu</h3>
+            <h3>{props.title}</h3>
         </>
     )
 }
 
-const AccordionsBody = () => {
-    console.log("AccordionBody rendering")
+type AccordionsBodyPropsType = {
+    titleMenu: string
+}
+
+const AccordionsBody = (props: AccordionsBodyPropsType) => {
+    if (props.titleMenu === "Menu One") {
+        return (
+            <>
+                <ul>
+                    <li>ONE</li>
+                    <li>I</li>
+                    <li>1</li>
+                    <li>Адзiн</li>
+                </ul>
+            </>
+        )
+    }
     return (
         <>
             <ul>

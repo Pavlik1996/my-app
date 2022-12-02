@@ -5,23 +5,30 @@ import {Rating} from "./components/Rating/Rating";
 
 
 const App = () => {
-    console.log("app rendering")
     return (
         <div>
             <PageTitle title={"This is APP component"}/>
-            <Rating value={1}/>
-            <Accordions/>
-            <Rating value={4}/>
-            <Rating value={3}/>
-            <Rating value={2}/>
-            <Rating value={0}/>
             <PageTitle title={"User"}/>
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Accordions titleValue={"Menu One"} collapsed={true}/>
+            <Accordions titleValue={"Menu Two"} collapsed={false}/>
+            <Accordions titleValue={"Menu One"} collapsed={false}/>
+            <Accordions titleValue={"Menu Two"} collapsed={true}/>
+
         </div>
 
     );
 }
 
-function PageTitle(props: any) {
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle(props: PageTitlePropsType) {
     return <h1>{props.title}</h1>
 }
 
